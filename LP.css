@@ -1,0 +1,283 @@
+/* Universal Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 10%;
+    background-color: antiquewhite;
+      background: linear-gradient(45deg, #f8c406, #feb47b); /* Add a gradient background */
+    /* background-color: #4A90E2; Uncomment for a solid color instead of gradient */
+  
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 10px;
+}
+
+.logo {
+    cursor: pointer;
+    margin-right: auto;
+}
+
+li, a, button {
+    font-weight: 500;
+    font-size: 17px;
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li a {
+    transition: 0.3s ease;
+}
+
+nav ul li a:hover {
+    transform: scale(1.2);
+    color: rgb(23, 169, 96);
+    transition: all 0.3s ease;
+}
+
+header > button {
+    padding: 9px 25px;
+    background-color: black;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+header > button:hover {
+    background-color: rgba(0, 136, 169, 0.8);
+}
+
+/* Wrapper and Content Styling */
+.wrapper {
+    background: url("header.png") no-repeat center center/cover;
+    width: 100%;
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+.wrapper::before {
+    position: absolute;
+    content: '';
+    background-image: linear-gradient;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.content {
+    display: flex;
+    padding: 80px 10%;
+    justify-content: center;
+    color: white;
+}
+
+.hero-info h1 {
+    font-size: 40px;
+}
+
+.hero-info p {
+    margin: 30px 0;
+    font-weight: 400;
+    line-height: 2;
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.btn-outline {
+    border-radius: 30px;
+    color: #ffffff;
+    border-color: #ffffff;
+    padding: 12px 30px;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+}
+
+.btn-outline:hover {
+    background: #ffffff;
+    color: #6730e3;
+}
+
+i.fa {
+    margin-right: 10px;
+}
+
+.social-links {
+    padding: 20px;
+    margin-top: 140px;
+}
+
+.social-links ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.social-links ul li {
+    margin: 0 10px;
+}
+
+.btn-social {
+    padding: 10px 15px;
+    border: non;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-social:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 4px 15px rgba(187, 5, 5, 0.2);
+}
+
+.bg-facebook {
+    background-color: #4267b2;
+}
+
+.bg-instagram {
+    background-color: #c13584;
+}
+
+.bg-youtube {
+    background-color: #ff0000;
+}
+
+.local {
+    animation-name: colorchange;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes colorchange {
+    0% {
+        color: blueviolet;
+    }
+    25% {
+        color: blue;
+    }
+    50% {
+        color: deeppink;
+    }
+    75% {
+        color: hotpink;
+    }
+    100% {
+        color: brown;
+    }
+}
+
+/* Fade-in Up Animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.hero-info h1 {
+    animation: slideInLeft 1.5s ease-out;
+}
+
+/* Section-Specific Styling */
+#about, #projects, #contact, #more {
+    padding: 100px 10%;
+    margin: 0;
+    animation: fadeInUp 1s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Background colors for sections */
+#about, #projects, #contact, #more {
+
+    color: #333;
+    position: relative;
+}
+
+/* Specific Styles for Sections */
+#about h1, #projects h1, #contact h1, #more h1 {
+    color: #ff0000;
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+    position: absolute;
+    top: 0;  /* Align the h1 to the top */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+}
+
+#about p, #projects p, #contact p, #more p {
+    color: #ffffff;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 50px; /* Provide space below h1 */
+    padding: 20px;
+}
+
+#projects .phone-img {
+    width: auto;
+    display: block;
+    margin: 20px auto;
+}
+
+#contact .contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    text-align: center;
+}
+
+#contact .contact-info div {
+    margin: 10px 0; /* Space between contact details */
+}
